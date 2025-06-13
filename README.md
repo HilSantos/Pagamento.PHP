@@ -39,7 +39,7 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
     <h1>Pagamento</h1>
     <br><br>
 
-  <table>
+<table>
         <tr>
             <td colspan="5">
                 <!-- Exibe os dados do usuário para conferência -->
@@ -53,7 +53,7 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
             </td>
         </tr>
 
-  <?php
+<?php
         // Busca os produtos adicionados ao carrinho com seus detalhes e calcula o valor total //
         $sql = "SELECT id_carrinho, id_produto_carrinho, nome_produto, valor_produto,
             (valor_produto * quantidade_carrinho), imagem_produto, quantidade_carrinho
@@ -70,7 +70,7 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
         // Loop que exibe cada produto do carrinho //
         while ($tbl = mysqli_fetch_array($result)) {
         ?>
-  <tr>
+<tr>
                 <td><img src="imagens/<?= $tbl[5] ?>" alt="Imagem Produto" height="50"></td>
                 <td><?= $tbl[2] ?></td> <!-- Nome do produto -->
                 <td>R$ <?= number_format($tbl[3], 2, ",", ".") ?> </td> <!-- Preço unitário -->
@@ -83,7 +83,7 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
         ?>
 
         <!-- Exibe o total geral da compra -->
-  <tr>
+<tr>
             <th></th>
             <th></th>
             <th></th>
@@ -92,11 +92,10 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
             <th></th>
         </tr>
     </table>
-
-  <br>
+<br>
 
     <!-- Formulário para o usuário selecionar o método de pagamento -->
-  <form action="obrigado.php" method="post">
+<form action="obrigado.php" method="post">
         <fieldset>
             <legend>Método de Pagamento</legend>
             <label for="pix">PIX</label>
@@ -107,13 +106,13 @@ $usuario = mysqli_fetch_array($result); // Armazena os dados do usuário em um a
             <input type="radio" name="pagamento" id="boleto" value="4">
         </fieldset>
 
-  <br><br>
+<br><br>
 
         <!-- Botão para voltar ao carrinho -->
-  <a href="carrinho.php"><button type="button">Voltar ao Carrinho</button></a>
+<a href="carrinho.php"><button type="button">Voltar ao Carrinho</button></a>
 
         <!-- Botão para confirmar o pagamento -->
-  <input type="submit" value="Confirmar Pagamento">
+<input type="submit" value="Confirmar Pagamento">
     </form>
 </body>
 
